@@ -19,13 +19,23 @@ const sampleProducts = [
   }
 ];
 
+// Helper function to get the base URL for API calls
+const getApiUrl = (endpoint) => {
+  // For production (Vercel deployment)
+  if (import.meta.env.PROD) {
+    return `/api${endpoint}`;
+  }
+  // For local development
+  return `/api${endpoint}`;
+};
+
 export const useProductStore = create((set) => ({
   products: [],
   
   // Fetch all products
   fetchProducts: async () => {
     try {
-      const res = await fetch('/api/products');
+      const res = await fetch(getApiUrl('/products'));
       const data = await res.json();
       
       if (data.success) {
@@ -46,7 +56,7 @@ export const useProductStore = create((set) => ({
       return {success: false, message: "Fill all the fields"};
     }
     try {
-      const res = await fetch('/api/products', {
+      const res = await fetch(getApiUrl('/products'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -73,7 +83,7 @@ export const useProductStore = create((set) => ({
   addSampleProducts: async () => {
     try {
       const promises = sampleProducts.map(product => 
-        fetch('/api/products', {
+        fetch(getApiUrl('/products'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -107,7 +117,7 @@ export const useProductStore = create((set) => ({
   // Delete product
   deleteProduct: async (id) => {
     try {
-      const res = await fetch(`/api/products/${id}`, {
+      const res = await fetch(getApiUrl(`/products/${id}`), {
         method: 'DELETE'
       });
       const data = await res.json();

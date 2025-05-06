@@ -11,7 +11,8 @@
     "install-server": "cd backend && npm install",
     "install-client": "cd frontend && npm install",
     "install-all": "npm install && npm run install-server && npm run install-client",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "cd frontend && npm install && npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build"
   },
   "keywords": [
