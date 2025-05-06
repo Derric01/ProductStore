@@ -67,4 +67,4 @@ npm run build
 MIT
 
 ## Created By
-[Your Name]
+Derric samson
