@@ -2,7 +2,7 @@
 
 A responsive, full-stack product management application built with the **MERN** stack – **MongoDB, Express, React, and Node.js**. It allows users to add, view, and delete products with ease, and supports dark/light mode.
 
-![Screenshot](https://via.placeholder.com/1200x600.png?text=Product+Store+Demo) <!-- Replace with your actual screenshot -->
+https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGx3cTkzNGR0Y3M2a25xMGtqdWtienMwemFpajR3MHFsZnowOWxmeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f98vMOHpI6bQTXhZcd/giphy.gif
 
 ---
 
