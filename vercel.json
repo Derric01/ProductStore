@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "buildCommand": "npm run vercel-build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
+  "builds": [
+    {
+      "src": "api/serverless.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend",
+      "use": "@vercel/static-build"
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/serverless.js" },
     { "source": "/(.*)", "destination": "/index.html" }
