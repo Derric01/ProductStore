@@ -12,7 +12,7 @@
     "install-client": "cd frontend && npm install",
     "install-all": "npm install && npm run install-server && npm run install-client",
     "build": "cd frontend && npm install && npm run build",
-    "vercel-build": "cd frontend && npm install && npm run build"
+    "vercel-build": "npm install -g vite && cd frontend && npm install && npm run build"
   },
   "keywords": [
     "mern",

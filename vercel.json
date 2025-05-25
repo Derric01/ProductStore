@@ -3,16 +3,12 @@
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
-  "builds": [
-    {
-      "src": "api/serverless.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "frontend",
-      "use": "@vercel/static-build"
+  "functions": {
+    "api/serverless.js": {
+      "memory": 1024,
+      "maxDuration": 10
     }
-  ],
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/serverless.js" },
     { "source": "/(.*)", "destination": "/index.html" }
