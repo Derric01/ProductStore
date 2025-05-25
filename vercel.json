@@ -4,10 +4,7 @@
   "outputDirectory": "frontend/dist",
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/serverless.js" }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/serverless.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "source": "/api/(.*)", "destination": "/api/serverless.js" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

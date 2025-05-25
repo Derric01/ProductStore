@@ -40,4 +40,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Export for Vercel serverless function
-module.exports = app;
+module.exports = (req, res) => {
+  return app(req, res);
+};

@@ -7,7 +7,8 @@ module.exports = async (req, res) => {
   try {
     await connectDB();
     // Pass the request to Express app
-    return app(req, res);
+    // Use Express app to handle request
+    app(req, res);
   } catch (error) {
     console.error('Database connection error:', error);
     res.status(500).json({ 
