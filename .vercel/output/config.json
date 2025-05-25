@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/serverless.js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "env": {
+    "NODE_VERSION": "18.x"
+  }
+}
