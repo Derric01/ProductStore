@@ -18,7 +18,7 @@ A responsive, full-stack product management application built with the **MERN** 
 
 ### 🔹 Frontend
 - React + Vite  
-- Chakra UI  
+- Chakra UI
 - Zustand (state management)  
 - React Router  
 
@@ -102,7 +102,44 @@ product-store/
    - `PORT` (optional, default is 5000)
    - `NODE_ENV=production`
 
-4. Use the included `Procfile` and `railway.toml` for deployment configuration.
+4. Use the included `Procfile` for deployment configuration.
+
+---
+
+## 🚀 Deployment on Render
+
+### Prerequisites
+- A GitHub repository with your project
+- A Render account
+- MongoDB Atlas database
+
+### Steps to Deploy
+
+1. **Create a new Web Service on Render**
+   - Log in to your Render dashboard
+   - Click "New" and select "Web Service"
+   - Connect your GitHub repository
+
+2. **Configure the Web Service**
+   - Name: Choose a name for your service (e.g., "product-store")
+   - Environment: Select "Node"
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+
+3. **Set Environment Variables**
+   - Add the following environment variables:
+     - `MONGO_URI`: Your MongoDB connection string
+     - `PORT`: `10000` (Render will automatically set the PORT to an internal value)
+     - `NODE_ENV`: `production`
+
+4. **Deploy the Application**
+   - Click "Create Web Service"
+   - Wait for the build and deployment to complete (this may take a few minutes)
+   - Your application will be available at the URL provided by Render
+
+5. **Monitor the Deployment**
+   - Check the logs in the Render dashboard for any errors
+   - Verify that your application is running correctly
 
 ---
 
