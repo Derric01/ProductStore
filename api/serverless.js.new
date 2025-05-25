@@ -1,0 +1,7 @@
+const app = require('./index');
+
+// Handler for Vercel serverless function
+module.exports = (req, res) => {
+  // Handle the request with Express
+  return app(req, res);
+};
