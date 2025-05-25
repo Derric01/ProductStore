@@ -4,6 +4,10 @@ const path = require('path');
 
 console.log('🚀 Starting deployment process...');
 
+// Create .nvmrc file for Vercel
+console.log('\n📌 Creating .nvmrc file for Vercel...');
+fs.writeFileSync(path.join(__dirname, '.nvmrc'), '18.x');
+
 // Step 1: Build the frontend
 console.log('\n📦 Building frontend...');
 exec('cd frontend && npm run build', (error, stdout, stderr) => {
@@ -24,9 +28,12 @@ exec('cd frontend && npm run build', (error, stdout, stderr) => {
   process.env.NODE_ENV = 'production';
   
   console.log('\n✨ Deployment preparation complete!');
-  console.log('\n🚀 You can now deploy your application using one of these methods:');
-  console.log('1. Heroku: git push heroku main');
-  console.log('2. Render: Connect your GitHub repository to Render');
-  console.log('3. Vercel/Netlify: Deploy the frontend separately');
-  console.log('4. AWS/Azure/GCP: Upload your files to a cloud provider');
+  console.log('\n🚀 You can now deploy your application to Vercel:');
+  console.log('1. Run: vercel (if Vercel CLI is installed)');
+  console.log('2. Or connect your GitHub repository to Vercel dashboard');
+  console.log('\n⚠️ IMPORTANT: Set these environment variables in Vercel:');
+  console.log('  - MONGO_URI=mongodb+srv://derricsamson17:eXIhnoKvUYaxFxGR@cluster0.68utnvz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+  console.log('  - PORT=5000');
+  console.log('  - NODE_ENV=production');
+});
 });

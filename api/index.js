@@ -10,12 +10,6 @@ dotenv.config();
 // Create Express app
 const app = express();
 
-// Connect to database when not in serverless environment
-// For serverless environment, connection will be made per request
-if (process.env.NODE_ENV !== 'production') {
-  connectDB();
-}
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -25,7 +19,7 @@ app.use('/api', productRoutes);
 
 // Base route
 app.get('/', (req, res) => {
-  res.send('API is running...');
+  res.json({ message: 'API is running...', status: 'success' });
 });
 
 // Error handler

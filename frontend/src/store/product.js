@@ -21,9 +21,8 @@ const sampleProducts = [
 
 // Helper function to get the base URL for API calls
 const getApiUrl = (endpoint) => {
-  // For production (Railway deployment)
+  // For production (Vercel deployment)
   if (import.meta.env.PROD) {
-    // When deployed to Railway, the API is on the same domain
     return `/api${endpoint}`;
   }
   // For local development
